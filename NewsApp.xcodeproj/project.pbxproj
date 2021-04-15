@@ -13,6 +13,11 @@
 		CEE18D4F2628254800155602 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE18D4D2628254800155602 /* Main.storyboard */; };
 		CEE18D512628254A00155602 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE18D502628254A00155602 /* Assets.xcassets */; };
 		CEE18D542628254A00155602 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE18D522628254A00155602 /* LaunchScreen.storyboard */; };
+		CEE18D5F2628264900155602 /* NetworkingProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE18D5E2628264900155602 /* NetworkingProtocols.swift */; };
+		CEE18D622628265D00155602 /* DataFetcherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE18D612628265D00155602 /* DataFetcherService.swift */; };
+		CEE18D67262827E200155602 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE18D66262827E200155602 /* NewsModel.swift */; };
+		CEE18D6A262830CE00155602 /* NewsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE18D69262830CE00155602 /* NewsRequest.swift */; };
+		CEE18D6E2628310900155602 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE18D6D2628310900155602 /* NetworkDataFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		CEE18D502628254A00155602 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEE18D532628254A00155602 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEE18D552628254A00155602 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEE18D5E2628264900155602 /* NetworkingProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingProtocols.swift; sourceTree = "<group>"; };
+		CEE18D612628265D00155602 /* DataFetcherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcherService.swift; sourceTree = "<group>"; };
+		CEE18D66262827E200155602 /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
+		CEE18D69262830CE00155602 /* NewsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRequest.swift; sourceTree = "<group>"; };
+		CEE18D6D2628310900155602 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +66,8 @@
 		CEE18D462628254800155602 /* NewsApp */ = {
 			isa = PBXGroup;
 			children = (
+				CEE18D65262827C500155602 /* Model */,
+				CEE18D5D2628263B00155602 /* Services */,
 				CEE18D472628254800155602 /* AppDelegate.swift */,
 				CEE18D492628254800155602 /* SceneDelegate.swift */,
 				CEE18D4B2628254800155602 /* ViewController.swift */,
@@ -65,6 +77,25 @@
 				CEE18D552628254A00155602 /* Info.plist */,
 			);
 			path = NewsApp;
+			sourceTree = "<group>";
+		};
+		CEE18D5D2628263B00155602 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CEE18D5E2628264900155602 /* NetworkingProtocols.swift */,
+				CEE18D612628265D00155602 /* DataFetcherService.swift */,
+				CEE18D69262830CE00155602 /* NewsRequest.swift */,
+				CEE18D6D2628310900155602 /* NetworkDataFetcher.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		CEE18D65262827C500155602 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CEE18D66262827E200155602 /* NewsModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,9 +168,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEE18D6E2628310900155602 /* NetworkDataFetcher.swift in Sources */,
+				CEE18D67262827E200155602 /* NewsModel.swift in Sources */,
+				CEE18D622628265D00155602 /* DataFetcherService.swift in Sources */,
 				CEE18D4C2628254800155602 /* ViewController.swift in Sources */,
+				CEE18D5F2628264900155602 /* NetworkingProtocols.swift in Sources */,
 				CEE18D482628254800155602 /* AppDelegate.swift in Sources */,
 				CEE18D4A2628254800155602 /* SceneDelegate.swift in Sources */,
+				CEE18D6A262830CE00155602 /* NewsRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
