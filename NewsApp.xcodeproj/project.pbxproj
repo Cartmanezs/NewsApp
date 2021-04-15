@@ -18,6 +18,8 @@
 		CEE18D67262827E200155602 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE18D66262827E200155602 /* NewsModel.swift */; };
 		CEE18D6A262830CE00155602 /* NewsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE18D69262830CE00155602 /* NewsRequest.swift */; };
 		CEE18D6E2628310900155602 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE18D6D2628310900155602 /* NetworkDataFetcher.swift */; };
+		CEE18D762628458600155602 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE18D742628458600155602 /* FeedTableViewCell.swift */; };
+		CEE18D772628458600155602 /* FeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE18D752628458600155602 /* FeedTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		CEE18D66262827E200155602 /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
 		CEE18D69262830CE00155602 /* NewsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRequest.swift; sourceTree = "<group>"; };
 		CEE18D6D2628310900155602 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
+		CEE18D742628458600155602 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
+		CEE18D752628458600155602 /* FeedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,8 @@
 				CEE18D472628254800155602 /* AppDelegate.swift */,
 				CEE18D492628254800155602 /* SceneDelegate.swift */,
 				CEE18D4B2628254800155602 /* ViewController.swift */,
+				CEE18D742628458600155602 /* FeedTableViewCell.swift */,
+				CEE18D752628458600155602 /* FeedTableViewCell.xib */,
 				CEE18D4D2628254800155602 /* Main.storyboard */,
 				CEE18D502628254A00155602 /* Assets.xcassets */,
 				CEE18D522628254A00155602 /* LaunchScreen.storyboard */,
@@ -156,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEE18D542628254A00155602 /* LaunchScreen.storyboard in Resources */,
+				CEE18D772628458600155602 /* FeedTableViewCell.xib in Resources */,
 				CEE18D512628254A00155602 /* Assets.xcassets in Resources */,
 				CEE18D4F2628254800155602 /* Main.storyboard in Resources */,
 			);
@@ -175,6 +182,7 @@
 				CEE18D5F2628264900155602 /* NetworkingProtocols.swift in Sources */,
 				CEE18D482628254800155602 /* AppDelegate.swift in Sources */,
 				CEE18D4A2628254800155602 /* SceneDelegate.swift in Sources */,
+				CEE18D762628458600155602 /* FeedTableViewCell.swift in Sources */,
 				CEE18D6A262830CE00155602 /* NewsRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -325,6 +333,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3LGQ7BBGZ6;
 				INFOPLIST_FILE = NewsApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -332,7 +341,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Igor.NewsApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -344,6 +353,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3LGQ7BBGZ6;
 				INFOPLIST_FILE = NewsApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -351,7 +361,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Igor.NewsApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

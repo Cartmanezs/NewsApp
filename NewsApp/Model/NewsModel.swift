@@ -10,6 +10,8 @@ import Foundation
 struct NewsSource: Decodable {
     let status: String?
     let totalResults: Int?
+    let articles: [Article]
+    
     struct Article: Decodable {
         let source: Source
         let author: String?
@@ -24,8 +26,6 @@ struct NewsSource: Decodable {
             let name: String?
         }
     }
-
-    let articles: [Article]
 
     private enum CodingKeys: String, CodingKey {
         case status
