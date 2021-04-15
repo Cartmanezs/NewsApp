@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -70,7 +70,6 @@
 				29BA35B302560DA67BC3C08C /* Pods-NewsApp.debug.xcconfig */,
 				5030FE9F874CC6CEE5244C9B /* Pods-NewsApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -95,13 +94,12 @@
 		CEE18D462628254800155602 /* NewsApp */ = {
 			isa = PBXGroup;
 			children = (
+				CEE18D7E26286E7500155602 /* Cell */,
 				CEE18D65262827C500155602 /* Model */,
 				CEE18D5D2628263B00155602 /* Services */,
 				CEE18D472628254800155602 /* AppDelegate.swift */,
 				CEE18D492628254800155602 /* SceneDelegate.swift */,
 				CEE18D4B2628254800155602 /* ViewController.swift */,
-				CEE18D742628458600155602 /* FeedTableViewCell.swift */,
-				CEE18D752628458600155602 /* FeedTableViewCell.xib */,
 				CEE18D4D2628254800155602 /* Main.storyboard */,
 				CEE18D502628254A00155602 /* Assets.xcassets */,
 				CEE18D522628254A00155602 /* LaunchScreen.storyboard */,
@@ -127,6 +125,15 @@
 				CEE18D66262827E200155602 /* NewsModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		CEE18D7E26286E7500155602 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CEE18D742628458600155602 /* FeedTableViewCell.swift */,
+				CEE18D752628458600155602 /* FeedTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
