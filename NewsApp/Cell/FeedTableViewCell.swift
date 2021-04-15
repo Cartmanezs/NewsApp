@@ -14,6 +14,7 @@ class FeedTableViewCell: UITableViewCell {
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var sourceLabel: UILabel!
     @IBOutlet weak var imageFeed: UIImageView!
+    @IBOutlet weak var activityView: UIActivityIndicatorView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -15,10 +15,10 @@ class ViewController: UIViewController {
     private let feedCellId = "FeedTableViewCell"
     private var dataFetcherService = DataFetcherService()
     private var myFeed: [NewsSource.Article?] = []
+    private var fetchingMore = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.register(UINib.init(nibName:feedCellId, bundle: nil), forCellReuseIdentifier: feedCellId)
         tableView.separatorColor = UIColor.clear
         
@@ -48,6 +48,9 @@ extension ViewController: UITableViewDataSource {
         return myFeed.count
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: feedCellId, for: indexPath) as! FeedTableViewCell
@@ -56,7 +59,11 @@ extension ViewController: UITableViewDataSource {
             cell.sourceLabel.text = feed.source.name
             cell.authorLabel.text = feed.author
             cell.descriptionLabel.text = feed.description
-            setImage(from: feed.urlToImage!, feedImage: cell.imageView!)
+            cell.activityView.isHidden = false 
+            cell.activityView.startAnimating()
+            setImage(from: feed.urlToImage!, feedImage: cell.imageFeed!)
+            cell.activityView.stopAnimating()
+            cell.activityView.isHidden = true
         }
         return cell
     }
