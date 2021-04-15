@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ViewController: UIViewController {
 
@@ -27,6 +28,19 @@ class ViewController: UIViewController {
             self.tableView.reloadData()
         }
     }
+    
+    private func setImage(from url: URL ,feedImage: UIImageView) {
+        getData(from: url) { data, response, error in
+            guard let data = data, error == nil else { return }
+            DispatchQueue.main.async() {
+                feedImage.image = UIImage(data: data)
+            }
+        }
+    }
+    
+    private func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
+    }
 }
 
 extension ViewController: UITableViewDataSource {
@@ -37,12 +51,12 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: feedCellId, for: indexPath) as! FeedTableViewCell
-
         if let feed = self.myFeed[indexPath.row] {
             cell.titleLabel.text = feed.title
             cell.sourceLabel.text = feed.source.name
             cell.authorLabel.text = feed.author
             cell.descriptionLabel.text = feed.description
+            setImage(from: feed.urlToImage!, feedImage: cell.imageView!)
         }
         return cell
     }
