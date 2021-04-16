@@ -26,10 +26,4 @@ struct NewsSource: Decodable {
             let name: String?
         }
     }
-
-    private enum CodingKeys: String, CodingKey {
-        case status
-        case totalResults
-        case articles
-    }
 }

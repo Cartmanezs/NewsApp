@@ -16,7 +16,7 @@ class ViewController: UIViewController, UISearchControllerDelegate {
     private var dataFetcherService = DataFetcherService()
     private var myFeed: [NewsSource.Article?] = []
     private let searchController = UISearchController(searchResultsController: nil)
-    var filteredData: [NewsSource.Article?] = []
+    private var filteredData: [NewsSource.Article?] = []
     private var searchBarIsEmpty: Bool {
         guard let text = searchController.searchBar.text else { return false }
         return text.isEmpty
@@ -107,7 +107,6 @@ extension ViewController: UITableViewDelegate {
         guard let url = myFeed[indexPath.row]?.url else { return }
         vc.url = url
         self.present(vc, animated: true, completion: nil)
-    
     }
 }
 
