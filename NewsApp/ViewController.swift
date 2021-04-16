@@ -104,8 +104,8 @@ extension ViewController: UITableViewDelegate {
 
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-        guard let title = myFeed[indexPath.row]?.title else { return }
-        vc.testIndex = title
+        guard let url = myFeed[indexPath.row]?.url else { return }
+        vc.url = url
         self.present(vc, animated: true, completion: nil)
     
     }

@@ -52,27 +52,10 @@
                     <view key="view" contentMode="scaleToFill" id="kWz-d5-I2Q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivt-W3-g9L">
-                                <rect key="frame" x="5" y="93" width="404" height="764"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="sOs-zB-SiG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="sOs-zB-SiG" firstAttribute="trailing" secondItem="ivt-W3-g9L" secondAttribute="trailing" constant="5" id="9nu-jp-hhE"/>
-                            <constraint firstItem="sOs-zB-SiG" firstAttribute="bottom" secondItem="ivt-W3-g9L" secondAttribute="bottom" constant="5" id="IOe-1v-qAN"/>
-                            <constraint firstItem="ivt-W3-g9L" firstAttribute="top" secondItem="sOs-zB-SiG" secondAttribute="top" constant="5" id="Ium-iE-2Cd"/>
-                            <constraint firstItem="ivt-W3-g9L" firstAttribute="leading" secondItem="sOs-zB-SiG" secondAttribute="leading" constant="5" id="pg7-hR-n9y"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="U5i-ic-qgK"/>
-                    <connections>
-                        <outlet property="testLabel" destination="ivt-W3-g9L" id="GxF-M0-4bG"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2tJ-dc-8tQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

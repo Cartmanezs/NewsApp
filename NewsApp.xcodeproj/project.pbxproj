@@ -102,11 +102,11 @@
 				CEE18D472628254800155602 /* AppDelegate.swift */,
 				CEE18D492628254800155602 /* SceneDelegate.swift */,
 				CEE18D4B2628254800155602 /* ViewController.swift */,
+				CE499AE22629812000CBAFC1 /* DetailViewController.swift */,
 				CEE18D4D2628254800155602 /* Main.storyboard */,
 				CEE18D502628254A00155602 /* Assets.xcassets */,
 				CEE18D522628254A00155602 /* LaunchScreen.storyboard */,
 				CEE18D552628254A00155602 /* Info.plist */,
-				CE499AE22629812000CBAFC1 /* DetailViewController.swift */,
 			);
 			path = NewsApp;
 			sourceTree = "<group>";
