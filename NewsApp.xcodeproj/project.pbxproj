@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE499AE32629812000CBAFC1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE499AE22629812000CBAFC1 /* DetailViewController.swift */; };
 		CEE18D482628254800155602 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE18D472628254800155602 /* AppDelegate.swift */; };
 		CEE18D4A2628254800155602 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE18D492628254800155602 /* SceneDelegate.swift */; };
 		CEE18D4C2628254800155602 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE18D4B2628254800155602 /* ViewController.swift */; };
@@ -27,6 +28,7 @@
 		29BA35B302560DA67BC3C08C /* Pods-NewsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsApp.debug.xcconfig"; path = "Target Support Files/Pods-NewsApp/Pods-NewsApp.debug.xcconfig"; sourceTree = "<group>"; };
 		440C40C9ADC9F02CBF3470BE /* Pods_NewsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5030FE9F874CC6CEE5244C9B /* Pods-NewsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsApp.release.xcconfig"; path = "Target Support Files/Pods-NewsApp/Pods-NewsApp.release.xcconfig"; sourceTree = "<group>"; };
+		CE499AE22629812000CBAFC1 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CEE18D442628254800155602 /* NewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE18D472628254800155602 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEE18D492628254800155602 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				CEE18D502628254A00155602 /* Assets.xcassets */,
 				CEE18D522628254A00155602 /* LaunchScreen.storyboard */,
 				CEE18D552628254A00155602 /* Info.plist */,
+				CE499AE22629812000CBAFC1 /* DetailViewController.swift */,
 			);
 			path = NewsApp;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				CEE18D5F2628264900155602 /* NetworkingProtocols.swift in Sources */,
 				CEE18D482628254800155602 /* AppDelegate.swift in Sources */,
 				CEE18D4A2628254800155602 /* SceneDelegate.swift in Sources */,
+				CE499AE32629812000CBAFC1 /* DetailViewController.swift in Sources */,
 				CEE18D762628458600155602 /* FeedTableViewCell.swift in Sources */,
 				CEE18D6A262830CE00155602 /* NewsRequest.swift in Sources */,
 			);

@@ -29,10 +29,12 @@ class ViewController: UIViewController, UISearchControllerDelegate {
         super.viewDidLoad()
         tableView.register(UINib.init(nibName:feedCellId, bundle: nil), forCellReuseIdentifier: feedCellId)
         tableView.separatorColor = UIColor.clear
+        
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search"
         navigationItem.searchController = searchController
+        
         fetchTopHeadlines()
     }
     
@@ -99,6 +101,13 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        guard let title = myFeed[indexPath.row]?.title else { return }
+        vc.testIndex = title
+        self.present(vc, animated: true, completion: nil)
+    
     }
 }
 
