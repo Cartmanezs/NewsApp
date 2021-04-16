@@ -8,27 +8,42 @@
 import UIKit
 import SDWebImage
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UISearchControllerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
     private let feedCellId = "FeedTableViewCell"
     private var dataFetcherService = DataFetcherService()
     private var myFeed: [NewsSource.Article?] = []
-    private var fetchingMore = false
+    private let searchController = UISearchController(searchResultsController: nil)
+    var filteredData: [NewsSource.Article?] = []
+    private var searchBarIsEmpty: Bool {
+        guard let text = searchController.searchBar.text else { return false }
+        return text.isEmpty
+    }
+    private var isFiltering: Bool {
+        return !searchBarIsEmpty
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib.init(nibName:feedCellId, bundle: nil), forCellReuseIdentifier: feedCellId)
         tableView.separatorColor = UIColor.clear
-        
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search"
+        navigationItem.searchController = searchController
+        fetchTopHeadlines()
+    }
+    
+    private func fetchTopHeadlines() {
         dataFetcherService.fetchTopHeadLines { [weak self] (myFeed) in
             guard let `self` = self, let myFeed = myFeed?.articles else { return }
             self.myFeed = myFeed
+            self.filteredData = myFeed
             self.tableView.reloadData()
         }
     }
-    
     private func setImage(from url: URL ,feedImage: UIImageView) {
         getData(from: url) { data, response, error in
             guard let data = data, error == nil else { return }
@@ -45,6 +60,9 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isFiltering {
+            return filteredData.count
+        }
         return myFeed.count
     }
     
@@ -54,17 +72,26 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: feedCellId, for: indexPath) as! FeedTableViewCell
-        if let feed = self.myFeed[indexPath.row] {
-            cell.titleLabel.text = feed.title
-            cell.sourceLabel.text = feed.source.name
-            cell.authorLabel.text = feed.author
-            cell.descriptionLabel.text = feed.description
+        let articles: NewsSource.Article?
+        if !isFiltering {
+            articles = self.myFeed[indexPath.row]
+        } else {
+            articles = self.filteredData[indexPath.row]
+        }
+        if articles != nil {
+            cell.titleLabel.text = articles?.title
+            cell.sourceLabel.text = articles!.source.name
+            cell.authorLabel.text = articles?.author
+            cell.descriptionLabel.text = articles?.description
             cell.activityView.isHidden = false 
             cell.activityView.startAnimating()
-            setImage(from: feed.urlToImage!, feedImage: cell.imageFeed!)
-            cell.activityView.stopAnimating()
+            if articles?.urlToImage != nil {
+                setImage(from: (articles?.urlToImage!)!, feedImage: cell.imageFeed!)
+                cell.activityView.stopAnimating()
+            }
             cell.activityView.isHidden = true
         }
+        
         return cell
     }
 }
@@ -75,4 +102,16 @@ extension ViewController: UITableViewDelegate {
     }
 }
 
-
+extension ViewController: UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text!)
+    }
+    
+    private func filterContentForSearchText(_ searchText: String ) {
+        filteredData = myFeed.filter { (article: NewsSource.Article?) -> Bool in
+            return (article?.title!.lowercased().contains(searchText.lowercased()))!
+        }
+        tableView.reloadData()
+    }
+}
