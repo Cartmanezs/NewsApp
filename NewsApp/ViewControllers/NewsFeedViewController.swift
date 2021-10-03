@@ -8,7 +8,7 @@
 import UIKit
 import SDWebImage
 
-class ViewController: UIViewController, UISearchControllerDelegate {
+class NewsFeedViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -30,11 +30,7 @@ class ViewController: UIViewController, UISearchControllerDelegate {
         tableView.register(UINib.init(nibName:feedCellId, bundle: nil), forCellReuseIdentifier: feedCellId)
         tableView.separatorColor = UIColor.clear
         
-        searchController.searchResultsUpdater = self
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search"
-        navigationItem.searchController = searchController
-        
+        configureSearch()
         fetchTopHeadlines()
     }
     
@@ -60,7 +56,8 @@ class ViewController: UIViewController, UISearchControllerDelegate {
     }
 }
 
-extension ViewController: UITableViewDataSource {
+extension NewsFeedViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isFiltering {
             return filteredData.count
@@ -98,7 +95,8 @@ extension ViewController: UITableViewDataSource {
     }
 }
 
-extension ViewController: UITableViewDelegate {
+extension NewsFeedViewController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
 
@@ -117,10 +115,17 @@ extension ViewController: UITableViewDelegate {
     }
 }
 
-extension ViewController: UISearchResultsUpdating {
+extension NewsFeedViewController: UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
         filterContentForSearchText(searchController.searchBar.text!)
+    }
+    
+    private func configureSearch() {
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search"
+        navigationItem.searchController = searchController
     }
     
     private func filterContentForSearchText(_ searchText: String ) {

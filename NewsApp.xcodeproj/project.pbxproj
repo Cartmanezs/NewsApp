@@ -10,7 +10,7 @@
 		CE499AE32629812000CBAFC1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE499AE22629812000CBAFC1 /* DetailViewController.swift */; };
 		CEE18D482628254800155602 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE18D472628254800155602 /* AppDelegate.swift */; };
 		CEE18D4A2628254800155602 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE18D492628254800155602 /* SceneDelegate.swift */; };
-		CEE18D4C2628254800155602 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE18D4B2628254800155602 /* ViewController.swift */; };
+		CEE18D4C2628254800155602 /* NewsFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE18D4B2628254800155602 /* NewsFeedViewController.swift */; };
 		CEE18D4F2628254800155602 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE18D4D2628254800155602 /* Main.storyboard */; };
 		CEE18D512628254A00155602 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE18D502628254A00155602 /* Assets.xcassets */; };
 		CEE18D542628254A00155602 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE18D522628254A00155602 /* LaunchScreen.storyboard */; };
@@ -32,7 +32,7 @@
 		CEE18D442628254800155602 /* NewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE18D472628254800155602 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEE18D492628254800155602 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CEE18D4B2628254800155602 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CEE18D4B2628254800155602 /* NewsFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedViewController.swift; sourceTree = "<group>"; };
 		CEE18D4E2628254800155602 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CEE18D502628254A00155602 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEE18D532628254A00155602 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 		CE499AE626298BC000CBAFC1 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				CEE18D4B2628254800155602 /* ViewController.swift */,
+				CEE18D4B2628254800155602 /* NewsFeedViewController.swift */,
 				CE499AE22629812000CBAFC1 /* DetailViewController.swift */,
 			);
 			path = ViewControllers;
@@ -265,7 +265,7 @@
 				CEE18D6E2628310900155602 /* NetworkDataFetcher.swift in Sources */,
 				CEE18D67262827E200155602 /* NewsModel.swift in Sources */,
 				CEE18D622628265D00155602 /* DataFetcherService.swift in Sources */,
-				CEE18D4C2628254800155602 /* ViewController.swift in Sources */,
+				CEE18D4C2628254800155602 /* NewsFeedViewController.swift in Sources */,
 				CEE18D5F2628264900155602 /* NetworkingProtocols.swift in Sources */,
 				CEE18D482628254800155602 /* AppDelegate.swift in Sources */,
 				CEE18D4A2628254800155602 /* SceneDelegate.swift in Sources */,
