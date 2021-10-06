@@ -42,6 +42,7 @@ class NewsFeedViewController: UIViewController {
             self.tableView.reloadData()
         }
     }
+    
     private func setImage(from url: URL ,feedImage: UIImageView) {
         getData(from: url) { data, response, error in
             guard let data = data, error == nil else { return }
