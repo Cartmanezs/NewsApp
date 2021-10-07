@@ -10,7 +10,7 @@ import WebKit
 
 class DetailViewController: UIViewController, WKNavigationDelegate {
 
-    private var webView: WKWebView!
+    var webView: WKWebView!
     var url: URL?
     
     override func loadView() {
