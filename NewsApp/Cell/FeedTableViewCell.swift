@@ -23,4 +23,12 @@ class FeedTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
+    
+    func configure(withArticle article: NewsSource.Article) {
+        self.titleLabel.text = article.title
+        self.descriptionLabel.text = article.description
+        self.authorLabel.text = article.author
+        self.sourceLabel.text = article.source?.name
+    }
+
 }

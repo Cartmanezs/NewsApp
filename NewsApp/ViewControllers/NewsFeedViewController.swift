@@ -78,15 +78,12 @@ extension NewsFeedViewController: UITableViewDataSource {
         } else {
             articles = self.filteredData[indexPath.row]
         }
-        if articles != nil {
-            cell.titleLabel.text = articles?.title
-            cell.sourceLabel.text = articles!.source.name
-            cell.authorLabel.text = articles?.author
-            cell.descriptionLabel.text = articles?.description
+        if let articles = articles {
+            cell.configure(withArticle: articles)
             cell.activityView.isHidden = false 
             cell.activityView.startAnimating()
-            if articles?.urlToImage != nil {
-                setImage(from: (articles?.urlToImage!)!, feedImage: cell.imageFeed!)
+            if articles.urlToImage != nil {
+                setImage(from: (articles.urlToImage!), feedImage: cell.imageFeed!)
                 cell.activityView.stopAnimating()
             }
             cell.activityView.isHidden = true
